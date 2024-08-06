@@ -33,7 +33,6 @@ d3d8.dll                 <- asi loader
 libtcc.dll               <- tiny c compiler
 scriptHook.asi           <- the plugin
 scripts                  <- scripts & sdk (Copy to the mod directory)
-ModManager               <- app to enable/disable scripts
 ```
 
 Starting from 2.20.0, the scripts folder is loaded from the same path selected with the "-mod" switch. This will allow you to package your scripts with your mod.
