@@ -17,14 +17,11 @@ Since this is a game about war, here are a few HUMAN rules:
 
 A scripting plugin that allows you to alter the game using C code.
 
-Q: What about Rome Remastered?
-A: I don't have that game, and from what I hear it is still maintained. Ask the devs to add scripting to it, that would be much much eaiser
-
-Q: What about Rome Total War 1.5 and 1.6?
-A: I can't support all version because I have to work, unless this is work?
-
 # HOW TO INSTALL
 
+
+Starting from 2.20.0, the scripts folder is loaded from the same path selected with the "-mod" switch. This will allow you to package your scripts with your mod.
+<br>
 Copy these files into the main game directory:
 
 ```
@@ -34,21 +31,8 @@ scriptHook.asi           <- the plugin
 scripts                  <- scripts & sdk (Copy to the mod directory)
 ```
 
-Starting from 2.20.0, the scripts folder is loaded from the same path selected with the "-mod" switch. This will allow you to package your scripts with your mod.
 <br>
 if you get a missing dll error, install VC++2013 form Microsoft
-
-# HOW IT WORKS
-
-+ Scripts are loaded when you start/load a game, and cleared when you exit
-+ The library creates a log file called scripthook.log when started
-+ Scripts can be activated or disabled from this file: [main.c](scripts/main.c)
-+ Your scripts must implement the hooks from the ```Script``` structure at the end of [scripthook.h](scripts/lib/scripthook.h)
-+ See [scripthook.h](scripts/lib/scripthook.h) for API you can call
-
-
-If you make a youtube video, make it funny and email me a link.
-If you create a mod, let me know. I like new ideas (Email in my profile)
 
 # Thanks
 
@@ -67,9 +51,3 @@ Any affiliation to "EB Online" is not welcome since they took down the first git
 <p style="text-align: center;">
 <img src=".resources/ANTI_HUMAN.png" alt="NAZI PIGS & EB Online">
 </p>
-
-# Copyright
-
-This project is for fun, a way to play around with x86 and remember the golden era of programs with no anti-debug &
-memory protection bullshit. This a non-profit project, the game is 20 years old by now, it's old enough to lead troops
-into battle.
