@@ -11,7 +11,7 @@ Since this is a game about war, here are a few HUMAN rules:
 7. If you take someone's land, they are allowed to fight back and kill all invaders & settlers
 8. Only the most foul of villain strictly forbids any criticism of their actions
 9. Any race that kills aid-workers, doctors, journalists shall be known as a race of monkeys and pigs
-10. Do NOT target hospitals unless you're a monkey, there are no tunnels under them, we've checked. This crime is copyrighted © tiny hat 2023/2024
+10. Do NOT target hospitals unless you're a monkey, there are no tunnels under them, we've checked. This crime is copyrighted © tiny hat 2023/2025
 
 # Rome total war alexander scripthook (Version 2.20.0)
 
