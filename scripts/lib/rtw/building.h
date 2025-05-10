@@ -4,16 +4,25 @@
 
 #include "common.h"
 
+typedef enum {
+    BUILDING_CLASSIFICATION_FORTIFICATION,
+    BUILDING_CLASSIFICATION_INFRASTRUCTURE,
+    BUILDING_CLASSIFICATION_MILITARY,
+    BUILDING_CLASSIFICATION_RELIGIOUS,
+    BUILDING_CLASSIFICATION_OTHER,
+    NUM_BUILDING_CLASSIFICATIONS
+} BuildingClassification;
+
 enum {
-    BUILDING_TYPE_CORE = 0,
-    BUILDING_TYPE_WALL,
-    BUILDING_TYPE_BARRACKS,
-    BUILDING_TYPE_MARKET = 5,
-    BUILDING_TYPE_BLACKSMITH,
-    BUILDING_TYPE_PORT,
-    BUILDING_TYPE_SEWERS,
-    BUILDING_TYPE_FARM,
-    BUILDING_TYPE_ROAD,
+//    BUILDING_TYPE_CORE = 0,
+//    BUILDING_TYPE_WALL,
+//    BUILDING_TYPE_BARRACKS,
+//    BUILDING_TYPE_MARKET = 5,
+//    BUILDING_TYPE_BLACKSMITH,
+//    BUILDING_TYPE_PORT,
+//    BUILDING_TYPE_SEWERS,
+//    BUILDING_TYPE_FARM,
+//    BUILDING_TYPE_ROAD,
     BUILDING_TYPE_COUNT = 64
 };
 
@@ -60,12 +69,15 @@ struct RecruitmentCapability {
 struct BuildingType { // size 0x84 = 132
     void *_cpp_class;       // offset 0x00 (I should've done this with everything instead of calling it unknown)
     int unknown0[4];
-    int type;               // offset 0x14  see BUILDING_TYPE_*
-    int unknown1[17];
-    char isWall;
-    char isPort;
-    char isCore;
-    int unknown2;
+    int index;              // offset 0x14  see BUILDING_TYPE_*
+    BuildingClassification classification;
+    int unknown1[16];
+    char isDefensesBuilding;
+    char isPortBuilding;
+    char isCoreBuilding;
+    char isTempleBuilding;
+    char isHinterlandBuilding;
+    char isFarmBuilding;
     int unknown3;
     const char *name;       // offset 0x68
     int unknown4;
@@ -75,13 +87,13 @@ struct BuildingType { // size 0x84 = 132
     int unknown5[2];
 };
 
-struct Building {
+struct Building { // class BUILDING : public SPYING_INFO_BUILDING
     int unknown0[11];
     BuildingType *type;        // offset 0x2C
     unsigned char level;       // offset 0x30
-    int unknown1[5];
+    int unknown1[5];           // m_plugin_levels, m_plugin_creators
     int buildByFaction;        // offset 0x48
     int health;                // offset 0x4C
-    int unknown2[4];
+    int unknown2[4];           // m_slot_position; // Only set and used in battle
     Settlement *settlement;    // offset 0x60
 };

@@ -9,12 +9,12 @@
 
 #define SCRIPTHOOK_VERSION_MAJOR 2
 #define SCRIPTHOOK_VERSION_MINOR 20
-#define SCRIPTHOOK_VERSION_PATCH 0
+#define SCRIPTHOOK_VERSION_PATCH 1
 
 
 #ifdef SCRIPTHOOK_ASI
 #define SCRIPTHOOK_API __declspec(dllexport)
-#include "../c_lib/byte_stream.h"
+#include "../c_lib.old/byte_stream.h"
 #else
 #include <tccdefs.h>
 #include "byte_stream.h"
@@ -338,6 +338,13 @@ SCRIPTHOOK_API int rtw_treasury_projected_profit(Treasury *treasury);
  * @return non-zero if the treasury is up to date, zero if the treasury is not up to date
  */
 SCRIPTHOOK_API int rtw_treasury_is_up_to_date(Treasury *treasury);
+
+/**
+ * Returns the core building if any
+ * @param treasury
+ * @return non-zero if a core building is found
+ */
+SCRIPTHOOK_API Building *rtw_get_core_building(Settlement *settlement);
 
 
 // ===========================================
