@@ -18,7 +18,7 @@ struct City {
 };
 
 struct CityBuildings {
-    Building *sortedList[BUILDING_TYPE_COUNT];
-    Building *list[BUILDING_TYPE_COUNT];  // offset 0x0604  list of all buildings in order of construction
+    Building *sortedList[BUILDING_TYPE_COUNT]; // lists buildings by their type index
+    Building *list[BUILDING_TYPE_COUNT];  // offset 0x0604  list of all buildings in order of construction, always has the first <count> elements filled in
     int count;                            // offset 0x0704
 };

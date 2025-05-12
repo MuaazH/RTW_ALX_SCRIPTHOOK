@@ -8,8 +8,8 @@
 #include "str_builder.h"
 
 #define SCRIPTHOOK_VERSION_MAJOR 2
-#define SCRIPTHOOK_VERSION_MINOR 20
-#define SCRIPTHOOK_VERSION_PATCH 2
+#define SCRIPTHOOK_VERSION_MINOR 21
+#define SCRIPTHOOK_VERSION_PATCH 0
 
 
 #ifdef SCRIPTHOOK_ASI
@@ -345,6 +345,13 @@ SCRIPTHOOK_API int rtw_treasury_is_up_to_date(Treasury *treasury);
  * @return non-zero if a core building is found
  */
 SCRIPTHOOK_API Building *rtw_get_core_building(Settlement *settlement);
+
+/**
+ * Returns the defenses building (the wall) if any
+ * @param treasury
+ * @return non-zero if a core building is found
+ */
+SCRIPTHOOK_API Building *rtw_get_defenses_building(Settlement *settlement);
 
 
 // ===========================================

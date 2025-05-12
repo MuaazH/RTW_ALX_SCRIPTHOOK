@@ -14,15 +14,6 @@ typedef enum {
 } BuildingClassification;
 
 enum {
-//    BUILDING_TYPE_CORE = 0,
-//    BUILDING_TYPE_WALL,
-//    BUILDING_TYPE_BARRACKS,
-//    BUILDING_TYPE_MARKET = 5,
-//    BUILDING_TYPE_BLACKSMITH,
-//    BUILDING_TYPE_PORT,
-//    BUILDING_TYPE_SEWERS,
-//    BUILDING_TYPE_FARM,
-//    BUILDING_TYPE_ROAD,
     BUILDING_TYPE_COUNT = 64
 };
 
@@ -69,7 +60,7 @@ struct RecruitmentCapability {
 struct BuildingType { // size 0x84 = 132
     void *_cpp_class;       // offset 0x00 (I should've done this with everything instead of calling it unknown)
     int unknown0[4];
-    int index;              // offset 0x14  see BUILDING_TYPE_*
+    int index;              // offset 0x14  used with CityBuildings.sortedList
     BuildingClassification classification;
     int unknown1[16];
     char isDefensesBuilding;

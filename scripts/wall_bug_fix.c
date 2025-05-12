@@ -10,9 +10,9 @@ void on_init() {
         Settlement *pSettlement = pRegions->regions[i].settlement;
         if (!pSettlement)
             continue; // The sea has no settlement
-        if (pSettlement->buildings.sortedList[BUILDING_TYPE_WALL])
-            continue;
-        pSettlement->wall3dModel = 0;
+        if (rtw_get_defenses_building(pSettlement))
+            continue; // It has a wall
+        pSettlement->wall3dModel = 0; // remove walls from cities that have no walls
     }
 }
 
