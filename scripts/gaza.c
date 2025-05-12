@@ -16,7 +16,7 @@ void on_end_of_turn() {
             continue;
         // destroy everything, vile animals.
         for (int j = BUILDING_TYPE_CORE; j < BUILDING_TYPE_COUNT; ++j) {
-            Building *b = settlement->buildings.byType[j];
+            Building *b = settlement->buildings.sortedList[j];
             if (b)
                 rtw_building_destroy(b); // serves you right! 76 years of occupation and still going strong!
         }

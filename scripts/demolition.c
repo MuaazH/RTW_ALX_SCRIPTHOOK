@@ -22,11 +22,11 @@ int on_demolition_check(Building *building) {
 //    rtw_log(SCRIPT, buf);
 
     // walls & core
-    if (type->isWall || type->isCore)
+    if (type->isDefensesBuilding || type->isCoreBuilding)
         return OPTION_ALLOW;
 
     // farms
-    if (type->type == BUILDING_TYPE_FARM)
+    if (type->isFarmBuilding)
         return OPTION_ALLOW;
 
     return OPTION_DEFAULT;
